@@ -1,0 +1,4 @@
+Training Exercises
+1) Google Guava
+2) Java 8 Streams
+3) Java design pattern
