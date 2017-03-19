@@ -13,6 +13,7 @@ Training Exercises
 7) Spring Boot microservices
 
 Habits to change
++ Leave office at 7:45 tops
 + Faulty keyboard typing
 + Don't simply acknowledge to explanations you are not sure of
 + Master Java 8 Core

@@ -9,6 +9,7 @@ public class Java8Tester {
   public static void main(String[] args) {
     Java8Tester tester = new Java8Tester();
 
+    //Implemented method
     MathOperation addition = (int a, int b) -> a + b;
     int value = tester.operate(2, 3, addition);
     System.out.println(value);
