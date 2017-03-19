@@ -1,4 +1,20 @@
+Technical Aspects
+=================
 Training Exercises
-1) Google Guava
-2) Java 8 Streams
-3) Java design pattern
+2) Java 8 Fundamentals
+	+ Functional Interfaces
+	+ Closures
+	+ Streams
+3) Ues of populator
+	+ Google Guava
+4) Coremedia (latest changes on GIT)
+5) Enums in Java
+6) Apache commons
+7) Spring Boot microservices
+
+Habits to change
++ Faulty keyboard typing
++ Don't simply acknowledge to explanations you are not sure of
++ Master Java 8 Core
++ Master Spring
++ Master the pattern of Coremedia development
