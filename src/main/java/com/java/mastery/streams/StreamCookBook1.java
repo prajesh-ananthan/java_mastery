@@ -3,8 +3,10 @@ package com.java.mastery.streams;
 import com.java.mastery.streams.model.Winner;
 
 import java.time.Duration;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.*;
 
 /**
  * Created by ANAN011 on 19/3/2017.
@@ -26,6 +28,47 @@ public class StreamCookBook1 {
       new Winner(2016, "Great Britain", "Chris Froome", "Team Sky", 3529, Duration.parse("PT89H04M48S"), 14));
 
   public static void main(String[] args) {
-    //TODO: https://dzone.com/articles/a-java-8-streams-cookbook?edition=268944&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-02-14
+
+    List<String> winnersToursLessThan3500km = tdfWinners
+        .stream()
+        .filter(d -> d.getLengthKm() > 3500)
+        .map(Winner::getName)
+        .collect(toList());
+
+    int total = tdfWinners.stream()
+        .collect(Collectors.summingInt(Winner::getYear));
+
+    //Accumulate names into a list
+    List<Integer> list = tdfWinners.stream()
+        .filter(w -> w.getYear() > 2010)
+        .map(Winner::getYear)
+        .collect(toList());
+
+    List<String> namesStartingWithA = tdfWinners
+        .stream()
+        .filter(w -> w.getName().startsWith("A"))
+        .map((Winner::getName))
+        .collect(toList());
+
+    //filter by distinct
+    List<String> distinctNames = tdfWinners.stream()
+        .map(Winner::getNationality)
+        .distinct()
+        .collect(toList());
+
+    //join strings
+    String teams = tdfWinners.stream().map(Winner::getTeam).collect(joining(","));
+
+    //Accumulate names into a list
+    List<String> winnerList = tdfWinners.stream().map(Winner::getName).collect(toList());
+
+    Map<String, List<Winner>> winnersByNationality = tdfWinners.stream()
+        .collect(groupingBy(Winner::getNationality));
+
+    Map<String, Long> winsByNationalityCounting = tdfWinners.stream()
+        .collect(groupingBy(Winner::getNationality, counting()));
+
+    Optional<Winner> fastestWinner = tdfWinners.stream().min(Comparator.comparingDouble(Winner::getAveSpeed));
+    System.out.println("fastestTDF - " + fastestWinner.get().getName());
   }
 }

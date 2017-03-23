@@ -90,4 +90,8 @@ public class Winner {
   public void setDaysInYellow(int daysInYellow) {
     this.daysInYellow = daysInYellow;
   }
+
+  public double getAveSpeed() {
+    return (getLengthKm() / (getWinningTime().getSeconds() / 3600) );
+  }
 }
