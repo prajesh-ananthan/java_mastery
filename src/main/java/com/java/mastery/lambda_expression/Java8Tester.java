@@ -23,6 +23,7 @@ public class Java8Tester {
     return mathOperation.operation(a, b);
   }
 
+  @FunctionalInterface
   interface MathOperation {
     int operation(int a, int b);
   }
