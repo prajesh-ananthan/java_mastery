@@ -2,9 +2,11 @@ package com.java.mastery.lambda_expression.functional_interface;
 
 import com.java.mastery.lambda_expression.exercise.Person;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 /**
  * Created by ANAN011 on 18/3/2017.
