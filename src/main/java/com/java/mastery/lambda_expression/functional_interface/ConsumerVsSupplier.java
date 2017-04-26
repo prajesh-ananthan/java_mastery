@@ -14,7 +14,7 @@ import java.util.function.Supplier;
  */
 public class ConsumerVsSupplier {
   public static void main(String[] args) {
-//    Supplier s = () -> Names.getNames();
+    Supplier s = () -> Names.getNames();
     displayStringWithConsumer("Hello Consumer!");
   }
 

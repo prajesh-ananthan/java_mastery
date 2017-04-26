@@ -9,13 +9,15 @@ import java.util.function.Consumer;
  */
 public class ConsumerBiConsumer {
   public static void main(String[] args) {
+    // BiConsumer to insert key-value pair into map
     HashMap<Integer, String> map = new HashMap<Integer, String>();
-    BiConsumer<Integer, String> b1 = (k, v) -> map.put(k, v);
+    BiConsumer<Integer, String> biConsumer = (k, v) -> map.put(k, v);
+
     Consumer<String> consumer = System.out::println;
 
-    b1.accept(1, "Consumer 1");
-    b1.accept(2, "Consumer 2");
-    b1.accept(3, "Consumer 3");
+    biConsumer.accept(1, "Consumer 1");
+    biConsumer.accept(2, "Consumer 2");
+    biConsumer.accept(3, "Consumer 3");
 
     printValuesInMap(map, consumer);
   }

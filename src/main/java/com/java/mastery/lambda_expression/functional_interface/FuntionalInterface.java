@@ -25,6 +25,7 @@ public class FuntionalInterface {
   public static void main(String[] args) {
     System.out.println("Printing first names beginning with P: ");
     printConditionally(people, p -> p.getFirstname().startsWith("P"));
+    Predicate <Person> predicate = p -> p.getFirstname().startsWith("P");
 
     System.out.println("Printing last names beginning with A: ");
     printConditionally(people, p -> p.getLastName().startsWith("A"));
