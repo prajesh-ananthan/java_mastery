@@ -18,7 +18,6 @@ public class WriteFilesEx {
     File file = new File(fileName);
 
     String content = "banana, orange, lemon, apple, plum";
-
     Files.write(content.getBytes(), file);
   }
 }
